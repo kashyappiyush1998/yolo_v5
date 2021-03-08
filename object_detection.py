@@ -23,7 +23,7 @@ class YoloV5:
             if pred is not None:
                 for c in pred[:, -1]:
                     n = (pred[:, -1] == c).sum()  # detections per class
-                    classes[result.names[int(c)]] = n.numpy()
+                    classes[result.names[int(c)]] = n.numpy()[0]
 
         return classes
 
