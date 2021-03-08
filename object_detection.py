@@ -17,7 +17,7 @@ class YoloV5:
         img = Image.fromarray(img)
         img.filename = 'temp.png'
         imgs.append(img)
-        result = self.model(imgs, size=1280, augment=True)
+        result = self.model.predict(imgs, size=1280, augment=True)
 
         for i, (img, pred) in enumerate(zip(result.imgs, result.pred)):
             if pred is not None:
@@ -34,7 +34,7 @@ class YoloV5:
             img=Image.fromarray(img)
             img.filename = 'temp.png'
             new_imgs.append(img)
-        result = self.model(imgs)
+        result = self.model.predict(imgs)
 
         for i, (img, pred) in enumerate(zip(result.imgs, result.pred)):
             if pred is not None:
