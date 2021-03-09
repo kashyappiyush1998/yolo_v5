@@ -7,7 +7,7 @@ from yolov5 import YOLOv5
 class YoloV5:
     def __init__(self):
         # self.model_path = torch.hub.load('ultralytics/yolov5', 'yolov5x', pretrained=True, force_reload=False)
-        self.model_path = '/datadrive/weights/yolov5x.pt'
+        self.model_path = 'weights/yolov5/yolov5x.pt'
         self.device = 'cpu'
         self.model = YOLOv5(self.model_path, self.device)
 
